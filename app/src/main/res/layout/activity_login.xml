@@ -1,30 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.LoginFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activities.LoginActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/e_mail"
+        android:background="@color/action_bar">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/digital_house_foods"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        app:boxStrokeColor="@android:color/transparent"
-        app:hintTextColor="?attr/colorOnSurface"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/e_mail"
         android:padding="20dp"
-        android:layout_marginTop="20dp">
+        app:boxStrokeColor="@android:color/transparent"
+        app:hintTextColor="?attr/colorOnSurface">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/e_mail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@color/action_bar"
+            android:foregroundTint="@android:color/transparent"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:foregroundTint="@android:color/transparent"
-            android:textCursorDrawable="@drawable/cursor"/>
+            android:textColor="@color/action_bar"
+            android:textCursorDrawable="@drawable/cursor" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -38,6 +55,7 @@
         app:hintTextColor="?attr/colorOnSurface">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/senha"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:foregroundTint="@android:color/transparent"
@@ -49,25 +67,27 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/login_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/log_in"
+        android:layout_margin="20dp"
         android:backgroundTint="@color/log_in_button"
-        android:layout_margin="20dp"/>
+        android:text="@string/log_in" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/or"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="@string/or" />
 
     <Button
+        android:id="@+id/register_button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/registre_se"
-        android:backgroundTint="@color/register_button"
-        android:layout_marginTop="100dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp" />
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/register_button"
+        android:text="@string/registre_se1" />
 
 </LinearLayout>
