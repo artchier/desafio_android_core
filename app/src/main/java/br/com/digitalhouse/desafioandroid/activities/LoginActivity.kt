@@ -16,6 +16,11 @@ class LoginActivity : AppCompatActivity() {
         val usuario: Usuario? = intent.getSerializableExtra("key") as? Usuario
         e_mail.setText(usuario?.email)
         senha.setText(usuario?.senha)
+
+        login_button.setOnClickListener{
+            startActivity(Intent(this, HomeActivity::class.java))
+            finish()
+        }
         register_button1.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
             finish()
