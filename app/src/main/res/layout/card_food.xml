@@ -2,13 +2,13 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
-    android:layout_height="260dp"
+    android:layout_height="250dp"
     android:layout_margin="5dp"
     app:cardCornerRadius="5dp"
     android:id="@+id/card_food">
 
     <ImageView
-        android:id="@+id/imagem_food"
+        android:id="@+id/imagem_food1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY"/>
@@ -25,7 +25,7 @@
         android:paddingBottom="10dp">
 
         <TextView
-            android:id="@+id/nome_food"
+            android:id="@+id/nome_food1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
