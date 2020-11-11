@@ -1,19 +1,25 @@
 package br.com.digitalhouse.desafioandroid
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import br.com.digitalhouse.desafioandroid.domain.Food
 
-class FoodAdapter(private val listFoods: ArrayList<Food>) :
+class FoodAdapter(
+    private val listFoods: ArrayList<Food>/*,
+    private val context: ContractHomeActivity,
+    activity: FragmentActivity?*/
+) :
     RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
     class FoodViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imagem: ImageView = view.findViewById(R.id.imagem_food)
-        val nome: TextView = view.findViewById(R.id.nome_food)
+        val imagem: ImageView = view.findViewById(R.id.imagem_food1)
+        val nome: TextView = view.findViewById(R.id.nome_food1)
         val endereco: TextView = view.findViewById(R.id.endereco_food)
         val horario: TextView = view.findViewById(R.id.horario_food)
     }
@@ -33,5 +39,16 @@ class FoodAdapter(private val listFoods: ArrayList<Food>) :
         holder.nome.text = food.nome
         holder.endereco.text = food.endereco
         holder.horario.text = food.horario
+
+        holder.itemView.setOnClickListener {
+            val imagem: Int = food.imagem
+            val nome: String = food.nome
+            val prato: String = food.prato
+            findNavController(it).navigate(R.id.action_homeFragment_to_detailsFragment, Bundle().apply{
+                putInt("imagem", imagem)
+                putString("nome", nome)
+                putString("prato", prato)
+            })
+        }
     }
 }
