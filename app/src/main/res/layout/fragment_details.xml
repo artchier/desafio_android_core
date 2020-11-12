@@ -47,11 +47,11 @@
         android:layout_margin="10dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:spanCount="2"
-        android:layout_marginStart="8dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:listitem="@layout/detail_food"/>
 

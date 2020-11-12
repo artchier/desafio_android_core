@@ -42,8 +42,8 @@ class FoodAdapter(
 
         holder.itemView.setOnClickListener {
             val imagem: Int = food.imagem
-            val nome: String = food.nome
-            val prato: String = food.prato
+            val nome: String? = food.nome
+            val prato: String? = food.prato
             findNavController(it).navigate(R.id.action_homeFragment_to_detailsFragment, Bundle().apply{
                 putInt("imagem", imagem)
                 putString("nome", nome)
