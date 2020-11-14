@@ -1,16 +1,27 @@
 package br.com.digitalhouse.desafioandroid
 
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
+import android.view.View.GONE
+import android.view.View.INVISIBLE
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.FragmentTransaction
+import androidx.recyclerview.widget.ItemTouchHelper.DOWN
 import androidx.recyclerview.widget.RecyclerView
+import br.com.digitalhouse.desafioandroid.activities.DetailsActivity
 import br.com.digitalhouse.desafioandroid.domain.Food
+import br.com.digitalhouse.desafioandroid.fragments.DishFragment
+import kotlinx.android.synthetic.main.activity_details.*
 
-class DetailsAdapter(private val listDetails: ArrayList<Food>):
+class DetailsAdapter(
+    private val listDetails: ArrayList<Food>,
+    private val detailsActivity: DetailsActivity
+) :
     RecyclerView.Adapter<DetailsAdapter.DetailsViewHolder>() {
-    class DetailsViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class DetailsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val image_details: ImageView = view.findViewById(R.id.image_details)
         val prato_details: TextView = view.findViewById(R.id.prato_details)
     }
@@ -28,5 +39,18 @@ class DetailsAdapter(private val listDetails: ArrayList<Food>):
 
         holder.image_details.setImageResource(details.imagem)
         holder.prato_details.text = details.prato
+
+        holder.itemView.setOnClickListener {
+            val imagem: Int = details.imagem
+            val prato: String = details.prato.toString()
+            val descricao: String = details.descricao.toString()
+
+            detailsActivity.supportFragmentManager.beginTransaction().apply {
+                add(R.id.details, DishFragment.newInstance(imagem, prato, descricao))
+                setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                addToBackStack(null)
+                commit()
+            }
+        }
     }
 }

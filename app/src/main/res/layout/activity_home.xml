@@ -5,22 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activities.HomeActivity">
+    tools:context=".activities.HomeActivity"
+    android:background="#DDDDDD">
 
-    <fragment
-        android:id="@+id/navHostfragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:defaultNavHost="true"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_graph" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/card_food" />
+    </LinearLayout>
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar_home"
-        android:theme="@style/ToolbarTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/action_bar"

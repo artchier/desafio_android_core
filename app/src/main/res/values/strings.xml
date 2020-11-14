@@ -20,4 +20,8 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="pratos_principais">Pratos principais</string>
+    <string name="texto_louco">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusant doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis.</string>
+    <string name="title_activity_details">DetailsActivity</string>
+    <string name="title_activity_dish">DishActivity</string>
 </resources>

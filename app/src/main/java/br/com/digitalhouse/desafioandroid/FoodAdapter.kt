@@ -1,19 +1,21 @@
 package br.com.digitalhouse.desafioandroid
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.navigation.Navigation.findNavController
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import br.com.digitalhouse.desafioandroid.activities.HomeActivity
 import br.com.digitalhouse.desafioandroid.domain.Food
 
 class FoodAdapter(
-    private val listFoods: ArrayList<Food>/*,
-    private val context: ContractHomeActivity,
-    activity: FragmentActivity?*/
+    private val listFoods: ArrayList<Food>,
+    private val callDetailsActivity: Intent,
+    private val homeActivity: HomeActivity
 ) :
     RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
 
@@ -44,11 +46,16 @@ class FoodAdapter(
             val imagem: Int = food.imagem
             val nome: String? = food.nome
             val prato: String? = food.prato
-            findNavController(it).navigate(R.id.action_homeFragment_to_detailsFragment, Bundle().apply{
-                putInt("imagem", imagem)
-                putString("nome", nome)
-                putString("prato", prato)
-            })
+            /*findNavController(it).navigate(
+                R.id.action_homeFragment_to_detailsFragment,
+                Bundle().apply {
+
+                })*/
+            callDetailsActivity
+                .putExtra("imagem", imagem)
+                .putExtra("nome", nome)
+                .putExtra("prato", prato)
+            startActivity(homeActivity, callDetailsActivity, null)
         }
     }
 }

@@ -37,98 +37,171 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="@string/nome"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="20dp"
-        app:boxStrokeColor="@android:color/transparent"
-        app:hintTextColor="?attr/colorOnSurface">
+        android:paddingStart="13dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="15dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nome"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:foregroundTint="@android:color/transparent"
-            android:inputType="textPersonName|textCapWords"
-            android:maxLines="1"
-            android:textColor="@color/action_bar"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="@string/nome"
+            app:boxStrokeColor="@android:color/transparent"
+            app:hintTextColor="?attr/colorOnSurface"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nome"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1"
+                android:background="@android:color/white"
+                android:textColor="@color/action_bar"
+                android:textCursorDrawable="@drawable/cursor" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        <include layout="@layout/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginTop="65dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/e_mail"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="20dp"
-        app:boxStrokeColor="@android:color/transparent"
-        app:hintTextColor="?attr/colorOnSurface">
+        android:paddingStart="13dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="15dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/novo_email"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:foregroundTint="@android:color/transparent"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"
-            android:textColor="@color/action_bar"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:layout_height="wrap_content"
+            android:hint="@string/e_mail"
+            app:boxStrokeColor="@android:color/transparent"
+            app:hintTextColor="?attr/colorOnSurface"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/novo_email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="@color/action_bar"
+                android:textCursorDrawable="@drawable/cursor" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        <include layout="@layout/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginTop="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/senha"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="20dp"
-        app:boxStrokeColor="@android:color/transparent"
-        app:hintTextColor="?attr/colorOnSurface">
+        android:paddingStart="13dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="15dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nova_senha"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:foregroundTint="@android:color/transparent"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:textColor="@color/action_bar"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:layout_height="wrap_content"
+            android:hint="@string/senha"
+            app:boxStrokeColor="@android:color/transparent"
+            app:hintTextColor="?attr/colorOnSurface"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nova_senha"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="@color/action_bar"
+                android:textCursorDrawable="@drawable/cursor" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        <include layout="@layout/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginTop="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/repetir_senha"
-        android:paddingStart="20dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="20dp"
-        app:boxStrokeColor="@android:color/transparent"
-        app:hintTextColor="?attr/colorOnSurface">
+        android:paddingStart="13dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="15dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/nova_senha_confirma"
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:foregroundTint="@android:color/transparent"
-            android:inputType="textPassword"
-            android:maxLines="1"
-            android:textColor="@color/action_bar"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:layout_height="wrap_content"
+            android:hint="@string/repetir_senha"
+            app:boxStrokeColor="@android:color/transparent"
+            app:hintTextColor="?attr/colorOnSurface"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nova_senha_confirma"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="@color/action_bar"
+                android:textCursorDrawable="@drawable/cursor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <include layout="@layout/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginTop="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
