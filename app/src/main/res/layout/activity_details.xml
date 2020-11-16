@@ -93,4 +93,5 @@
                 app:navigationIcon="@drawable/voltar"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,18 +7,30 @@ import br.com.digitalhouse.desafioandroid.R
 import br.com.digitalhouse.desafioandroid.domain.Food
 import kotlinx.android.synthetic.main.activity_details.*
 
-class DetailsActivity : AppCompatActivity(), Contract {
+class DetailsActivity : AppCompatActivity() {
     private lateinit var adapter: DetailsAdapter
+
+    companion object {
+        private var x: Int = 0
+        private var y: Int = 0
+
+        fun setXY(coordinateX: Int, coordinateY: Int) {
+            x = coordinateX
+            y = coordinateY
+        }
+    }
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
         toolbar_details.title = ""
+
+        setSupportActionBar(toolbar_details)
+
         toolbar_details.setNavigationOnClickListener {
             onBackPressed()
         }
-
-        setSupportActionBar(toolbar_details)
 
         val imagem = intent.getIntExtra("imagem", 0)
         val nome = intent.getStringExtra("nome")
@@ -67,10 +79,15 @@ class DetailsActivity : AppCompatActivity(), Contract {
                     null,
                     prato, resources.getString(R.string.texto_louco)
                 )
-            )
-        , this)
+            ), this
+        )
         imagem_food2.setBackgroundResource(imagem)
         nome_food2.text = nome
         recyclerView2.adapter = adapter
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        scrollDetails.scrollTo(x, y)
     }
 }
